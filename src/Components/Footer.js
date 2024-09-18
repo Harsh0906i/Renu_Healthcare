@@ -1,10 +1,18 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Footer = () => {
+  const location = useLocation();
+
+  useEffect(() => { // Added a function to facilitate users to scroll to top after clicking on links
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <div className="bg-green-600 text-white py-10 px-5 w-full">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-        
+
         {/* About Us Section */}
         <div>
           <h1 className="text-2xl font-semibold mb-4">About Us</h1>
@@ -18,10 +26,10 @@ const Footer = () => {
         <div>
           <h1 className="text-2xl font-semibold mb-4">Quick Links</h1>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-gray-300">Home</a></li>
-            <li><a href="#" className="hover:text-gray-300">About</a></li>
-            <li><a href="#" className="hover:text-gray-300">Services</a></li>
-            <li><a href="#" className="hover:text-gray-300">Contact</a></li>
+            <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
+            <li><Link to="/About" className="hover:text-gray-300">About</Link></li>
+            <li><Link to="/Gallery" className="hover:text-gray-300">Gallery</Link></li>
+            <li><Link to="/Contact" className="hover:text-gray-300">Contact</Link></li>
           </ul>
         </div>
 
