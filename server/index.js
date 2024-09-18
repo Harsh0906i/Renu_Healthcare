@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 
-connectDb() 
+connectDb()
   .then(() => {
     // Start the server after successful connection
     app.listen(port, () => {
